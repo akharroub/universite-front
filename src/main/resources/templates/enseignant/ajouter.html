@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{css/enseignant/ajouterEN.css}" />
+
+</head>
+<body>
+<h1>ajouter Enseignant</h1>
+<div>
+<fieldset>
+<legend>Les Coordonnées</legend>
+<form id="formulaire" th:action="@{ajouter-enseignant-v}" method="post" th:object="${enseignant}">
+
+<label>Madame :</label>
+<input type="radio" id="sexe" name="sexe" value="F" th:field="*{sexe}" checked="checked"/>
+<label>Monsieur :</label>
+<input type="radio" id="sexe" name="sexe" value="M" th:field="*{sexe}"/><br/>
+
+<label>Nom :</label>
+<input type="text" id="nom" name="nom" th:field="*{nom}"  class="info"/><br/>
+
+<label>Prenom :</label>
+<input type="text" id="prenom" name="prenom" th:field="*{prenom}" class="info"/><br/>  
+
+<label>Numero :</label>
+<input type="number" id="numero_enseignant" name="numero_enseignant" th:field="*{numero_enseignant}" class="info"/><br/>
+
+<label>Date naissance :</label>
+<input type="Date" id="date_naissance" name="date_naissance" th:field="*{date_naissance}" class="info"/><br/>
+
+<label>Grade :</label>
+<input type="text" id="grade" name="grade" th:field="*{grade}" class="info"/><br/>
+
+<label>Date embauche :</label>
+<input type="Date" id="date_embauche" name="date_embauche" th:field="*{date_embauche}" class="info"/><br/>
+
+<label>Photo :</label>
+<input type="text" id="photo" name="photo" th:field="*{photo}" class="info"/><br/>
+
+
+<input type="button" value="envoye" onclick="validerLeFormulaire();" />
+<input type="reset" value="Annuler" />
+
+</fieldset>
+</form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{js/enseignant/validation-enseignant.js}"></script>
+</body>
+</html>

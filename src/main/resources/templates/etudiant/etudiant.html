@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Liste des Etudiants</title>
+<link rel="stylesheet" th:href="@{css/etudiant/etudiant.css}"/>
+</head>
+<body>
+<h1>Etudients</h1>
+<button type="button"><a th:href="@{formulaire-ajouter}">Ajouter</a></button>
+<div>
+<div th:each="e:${etudiant}" class="container">
+
+<p th:text="${e.nom}"></p><br/>
+<p th:text="${e.prenom}"></p><br/>
+
+
+
+
+<a th:href="@{etudiant-info(id=${e.id})}"><img th:src="${e.photo}"/></a>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{css/enseignant/enseignant-info.css}" />
+</head>
+<body>
+	<h1>info</h1>
+	<div class="container">
+		<div class="nom">
+			<p th:text="${enseignant.nom}"></p>
+			<p th:text="${enseignant.prenom}"></p>
+		</div>
+		<ul>
+			<li th:text="${enseignant.numero_enseignant}"></li>
+			<li th:text="${#dates.format(enseignant.date_naissance, 'dd/MM/yyyy')}"></li>
+			<li th:text="${enseignant.sexe}"></li>
+			<li th:text="${enseignant.grade}"></li>
+			<li th:text="${#dates.format(enseignant.date_embauche, 'dd/MM/yyyy')}"></li>
+			<li th:text="${enseignant.numero_enseignant}"></li>
+		</ul>
+
+		<img th:src="${enseignant.photo}" />
+<button type="button"><a th:href="@{modifier-enseignante(id=${enseignant.id})}">Modifier</a></button>
+<button type="button"><a th:href="@{supprimer-enseignante(id=${enseignant.id})}">Supprimer</a></button>
+	</div>
+</body>
+</html>

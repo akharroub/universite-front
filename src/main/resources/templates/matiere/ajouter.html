@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" th:href="@{css/etudiant/ajouter.css}" />
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>ajouter matiere</h1>
+<div>
+<fieldset>
+<legend>Les Coordonnées</legend>
+
+<form id="formulaire" th:action="@{modifier_v}" method="post" th:object="${matiere}">
+
+
+
+<label>Nom :</label>
+<input type="text" id="nom" name="nom" th:field="*{nom}"  class="info"/><br/>
+
+ 
+
+<label>Numero :</label>
+<input type="number" id="numero" name="numero" th:field="*{numero}" class="info"/><br/>
+
+
+
+<label>coef :</label>
+<input type="number" id="coef" name="coef" th:field="*{coef}" class="info"/><br/>
+
+<label>Enseignante</label> 
+<select th:field="*{enseignant}">
+					<option th:each="enseignant:${listeEnseignants}"
+						th:value="${enseignant.id}"
+						th:text="${enseignant.nom} + ' '+ ${enseignant.prenom} "></option>
+				</select> <br /> <input type="submit" value="envoye"  />
+<input type="reset" value="Annuler" />
+
+</fieldset>
+</form>
+</div>
+
+</body>
+</html>

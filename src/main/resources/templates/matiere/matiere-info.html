@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Info matiere</title>
+</head>
+<body>
+<h1 th:text="${matiere.nom}">Matiere</h1>
+
+<div>
+
+<ul>
+<li th:text="${matiere.id}"></li>
+
+<li th:text="${matiere.numero}"></li>
+<li th:text="${matiere.coef}"></li>
+<li th:text="${matiere.enseignant.nom} + ' '+ ${matiere.enseignant.prenom} "></li>
+<li th:text="${matiere.enseignant.prenom}"></li>
+<li>
+<span th:text="${matiere.enseignant.nom}"></span>
+<span th:text="${matiere.enseignant.prenom}"></span>
+
+</li>
+
+</ul>
+
+<button type="button"><a th:href="@{modifier-matiere(id=${matiere.id})}">Modifier</a></button>
+<button type="button"><a th:href="@{supprimer-matiere(id=${matiere.id})}">Supprimer</a></button>
+
+</div>
+</body>
+</html>

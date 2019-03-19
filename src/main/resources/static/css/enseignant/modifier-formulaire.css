@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+h1{
+	font-style: inherit;
+	text-align: center;
+	text-shadow: gray;
+}
+
+form{
+	
+	 width: 210px;
+    margin: auto;
+    color: #e4e6c4;
+     margin: auto;
+    
+}
+.erreur{
+	border: 2px solid red;
+}
+input {
+	display: inline-block;
+}
+.info{
+	width: 180px;
+    background: #c0cd98;
+    border-radius: 5px;
+
+	}

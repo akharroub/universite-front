@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+<link rel="stylesheet" th:href="@{css/etudiant/etudiant-info.css}" />
+</head>
+<body>
+	<h1>info</h1>
+	<div class="container">
+		<div class="nom">
+			<p th:text="${etudiant.nom}"></p>
+			<p th:text="${etudiant.prenom}"></p>
+		</div>
+		<ul>
+			<li th:text="${etudiant.numero}"></li>
+			<li th:text="${#dates.format(etudiant.date_naissance, 'dd/MM/yyyy')}"></li>
+			<li th:text="${etudiant.sexe}"></li>
+			
+			
+		</ul>
+
+		<img th:src="${etudiant.photo}" />
+<button type="button"><a th:href="@{modifier(id=${etudiant.id})}">Modifier</a></button>
+<button type="button"><a th:href="@{supprimer_etudiant(id=${etudiant.id})}">Supprimer</a></button>
+	</div>
+</body>
+</html>

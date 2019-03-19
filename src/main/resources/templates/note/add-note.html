@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+</head>
+
+<body>
+
+<div>
+
+<form method="post" th:action="@{valider-note-add}" th:object="${note}">
+
+<label>etudiant</label>
+<select th:field="*{etudiant}">
+<option th:each="etudiant:${etudiant}" th:value="${etudiant.id}" th:text="${etudiant.prenom + ' ' + etudiant.nom}"></option>
+</select> 
+
+<label>matiere</label>
+<select th:field="*{matiere}">
+<option th:each="matiere:${matiere}" th:value="${matiere.id}" th:text="${matiere.nom}"></option>
+</select > 
+
+<label>note</label>
+<input type="number" id="note" name="note" th:field="*{note}">
+
+<input type="submit" value="Valider">
+</form>
+</div>
+
+</body>
+</html>

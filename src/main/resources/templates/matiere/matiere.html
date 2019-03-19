@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{css/matiere/matiere.css}"/>
+</head>
+<body>
+<h1>matieres</h1>
+
+<button type="button"><a th:href="@{ajouter-matiere}">Ajouter</a></button><br/>
+<table>
+<tr th:each="matiere: ${matiere}">
+<td th:text="${matiere.id}"></td>
+<td th:text="${matiere.nom}"></td>
+<td th:text="${matiere.numero}"></td>
+<td th:text="${matiere.coef}"></td>
+<td th:text="${matiere.enseignant.nom}" th:if="${matiere.enseignant != null}"></td>
+<td th:text="${matiere.enseignant.prenom}"  th:if="${matiere.enseignant != null}"></td>
+<td><a th:href="@{matiere-info(id=${matiere.id})}">Voire</a></td>
+</tr>
+</table>
+
+</body>
+</html>
